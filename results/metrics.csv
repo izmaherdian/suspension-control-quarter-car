@@ -1,0 +1,6 @@
+metric,baseline,ga_tuned,reduction_percent
+"Peak body displacement |y_c| [mm]",79.1528,8.2354,89.6
+"Peak body velocity |dy_c/dt| [mm/s]",33.3901,4.2533,87.3
+"ISE of y_c [mm^2 s]",51146.3945,469.2497,99.1
+"RMS body velocity [mm/s]",11.8938,1.4819,87.5
+"Residual y_c at t = 30 s [mm]",38.7682,3.7921,90.2

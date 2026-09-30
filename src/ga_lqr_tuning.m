@@ -1,3 +1,10 @@
+%% ga_lqr_tuning.m
+% Standalone experiment: GA tuning of Q (4x4) and R (2x2) for a plain LQR
+% state-feedback controller on the (non-augmented) quarter-car model, with
+% stability check and comparison against Q = I, R = I.
+%
+% Requires: Control System Toolbox, Global Optimization Toolbox (ga)
+
 clear; 
 clc; 
 close all;

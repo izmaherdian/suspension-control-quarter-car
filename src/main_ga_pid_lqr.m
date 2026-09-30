@@ -1,3 +1,17 @@
+%% main_ga_pid_lqr.m
+% GA-tuned PID-LQR controller for a quarter-car active suspension.
+%
+%   1. Quarter-car state-space model (BMW 530i front axle)
+%   2. Integral-backstepping augmentation  (A_aug, B_aug, Gamma)
+%   3. Genetic Algorithm searches diag(Q) (6) and diag(R) (2)
+%   4. LQR gains -> PID gains  (Kp, Ki, Kd) for baseline and GA-tuned designs
+%   5. Simulates both controllers in quarter_car_pid_lqr_sim.slx (30 s)
+%
+% Requires: Control System Toolbox, Simulink, Global Optimization Toolbox (ga)
+% Run from the src/ folder:  >> main_ga_pid_lqr
+% (No Global Optimization Toolbox? use export_results.m, which reuses the
+%  Q_opt / R_opt reported in the paper.)
+
 clear
 clc
 close all
@@ -98,7 +112,7 @@ Ki_opt = K1_hat_opt*(1-Kd_opt*C*B);
 %%
 % Simulasi Menggunakan Simulink
 stime = 30;
-simOut = sim("CariLQR_PID.slx", stime);
+simOut = sim("quarter_car_pid_lqr_sim.slx", stime);
 
 % Ekstrak Data Waktu
 t_out = simOut.t_out;
